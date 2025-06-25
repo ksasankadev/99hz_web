@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>99HZ | Software Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .post-content {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .post-page {
+            display: none;
+        }
+        
+        .active-post {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .nav-link:hover::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: #facc15;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body class="bg-black text-gray-100 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-black border-b border-yellow-500 sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <span class="text-yellow-500 font-bold text-2xl">99</span>
+                <span class="text-white font-bold text-2xl">HZ</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="text-white nav-link">Home</a>
+                <a href="#" class="text-white nav-link">Services</a>
+                <a href="#" class="text-white nav-link">Portfolio</a>
+                <a href="#" class="text-yellow-500 font-semibold nav-link">Blog</a>
+                <a href="#" class="text-white nav-link">Contact</a>
+            </div>
+            <button class="md:hidden text-white">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-r from-black via-gray-900 to-black py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                <span class="text-yellow-500">99HZ</span> Blog
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
+                Insights, tutorials and news from the world of software development
+            </p>
+        </div>
+    </header>
+
+    <!-- Blog Section -->
+    <section class="container mx-auto px-4 py-16" id="blog-section">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">Latest Articles</h2>
+            <div class="w-24 h-1 bg-yellow-500 mx-auto"></div>
+        </div>
+        
+        <div class="blog-grid">
+            <!-- Blog Post 1 -->
+            <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                     alt="Coding" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <span class="text-yellow-500 text-sm font-medium">Development</span>
+                        <span class="text-gray-500 mx-2">•</span>
+                        <span class="text-gray-400 text-sm">June 15, 2023</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">The Future of Web Development in 2023</h3>
+                    <div class="post-content text-gray-300 mb-4">
+                        <p>As we move further into 2023, web development continues to evolve at a rapid pace. New frameworks, tools, and methodologies are emerging that promise to change how we build for the web. In this article, we explore the most significant trends shaping the future of web development, from the rise of WebAssembly to the increasing importance of performance optimization in an era of mobile-first indexing...</p>
+                    </div>
+                    <button onclick="loadPost('post1')" class="text-yellow-500 font-semibold hover:text-yellow-400 transition-colors flex items-center">
+                        Read More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Blog Post 2 -->
+            <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=765&q=80" 
+                     alt="AI" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <span class="text-yellow-500 text-sm font-medium">AI</span>
+                        <span class="text-gray-500 mx-2">•</span>
+                        <span class="text-gray-400 text-sm">May 28, 2023</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Integrating AI into Your Development Workflow</h3>
+                    <div class="post-content text-gray-300 mb-4">
+                        <p>Artificial Intelligence is no longer just a buzzword - it's becoming an essential part of modern development workflows. From code completion tools like GitHub Copilot to AI-powered testing frameworks, developers now have access to powerful assistants that can dramatically improve productivity. This article examines practical ways to incorporate AI into your daily development process while maintaining code quality and security standards...</p>
+                    </div>
+                    <button onclick="loadPost('post2')" class="text-yellow-500 font-semibold hover:text-yellow-400 transition-colors flex items-center">
+                        Read More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Blog Post 3 -->
+            <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" 
+                     alt="Security" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <span class="text-yellow-500 text-sm font-medium">Security</span>
+                        <span class="text-gray-500 mx-2">•</span>
+                        <span class="text-gray-400 text-sm">April 12, 2023</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Essential Security Practices for Modern Applications</h3>
+                    <div class="post-content text-gray-300 mb-4">
+                        <p>With cyber threats becoming more sophisticated, application security has never been more critical. This comprehensive guide covers the essential security practices every development team should implement, from secure coding principles to runtime protection mechanisms. We'll explore OWASP Top 10 vulnerabilities, modern authentication strategies, and how to build security into your CI/CD pipeline from day one...</p>
+                    </div>
+                    <button onclick="loadPost('post3')" class="text-yellow-500 font-semibold hover:text-yellow-400 transition-colors flex items-center">
+                        Read More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Post Pages (Hidden by default) -->
+    <div id="post-pages" class="container mx-auto px-4 py-16 hidden">
+        <!-- Post 1 -->
+        <div id="post1" class="post-page max-w-4xl mx-auto">
+            <button onclick="backToBlog()" class="text-yellow-500 mb-8 flex items-center hover:text-yellow-400 transition-colors">
+                <i class="fas fa-arrow-left mr-2"></i> Back to Blog
+            </button>
+            
+            <div class="flex items-center mb-6">
+                <span class="text-yellow-500 text-sm font-medium">Development</span>
+                <span class="text-gray-500 mx-2">•</span>
+                <span class="text-gray-400 text-sm">June 15, 2023</span>
+            </div>
+            
+            <h1 class="text-3xl md:text-4xl font-bold mb-6">The Future of Web Development in 2023</h1>
+            
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                 alt="Coding" class="w-full h-96 object-cover rounded-lg mb-8">
+            
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 mb-4">As we move further into 2023, web development continues to evolve at a rapid pace. New frameworks, tools, and methodologies are emerging that promise to change how we build for the web.</p>
+                
+                <h2 class="text-2xl font-bold text-yellow-500 mt-8 mb-4">The Rise of WebAssembly</h2>
+                <p class="text-gray-300 mb-4">WebAssembly (Wasm) has moved from experimental technology to mainstream adoption. Major browsers now support Wasm, enabling near-native performance for web applications. Developers are using it for:</p>
+                <ul class="list-disc pl-6 mb-4 text-gray-300">
+                    <li class="mb-2">High-performance web applications</li>
+                    <li class="mb-2">Porting existing C/C++ codebases to the web</li>
+                    <li class="mb-2">Running computationally intensive tasks in the browser</li>
+                </ul>
+                
+                <h2 class="text-2xl font-bold text-yellow-500 mt-8 mb-4">Performance Optimization</h2>
+                <p class="text-gray-300 mb-4">With Google's Core Web Vitals now a ranking factor, performance optimization has become more critical than ever. Techniques like:</p>
+                <ul class="list-disc pl-6 mb-4 text-gray-300">
+                    <li class="mb-2">Code splitting and lazy loading</li>
+                    <li class="mb-2">Image optimization with modern formats like AVIF</li>
+                    <li class="mb-2">Edge computing with CDNs</li>
+                </ul>
+                
+                <h2 class="text-2xl font-bold text-yellow-500 mt-8 mb-4">The JavaScript Ecosystem</h2>
+                <p class="text-gray-300 mb-4">The JavaScript framework wars continue, but we're seeing consolidation around a few key players:</p>
+                <div class="bg-gray-800 rounded-lg p-4 mb-6">
+                    <div class="flex flex-wrap gap-4">
+                        <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">React 18</span>
+                        <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">Vue 3</span>
+                        <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">SvelteKit</span>
+                        <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">SolidJS</span>
+                    </div>
+                </div>
+                
+                <p class="text-gray-300 mb-4">Each framework has its strengths, and the choice often depends on project requirements rather than technical superiority.</p>
+                
+                <div class="border-t border-gray-700 mt-12 pt-8">
+                    <h3 class="text-xl font-bold mb-4">About the Author</h3>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-yellow-500 flex items-center justify-center text-black font-bold mr-4">
+                            JD
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">John Doe</h4>
+                            <p class="text-gray-400 text-sm">Lead Developer at 99HZ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Post 2 -->
+        <div id="post2" class="post-page max-w-4xl mx-auto">
+            <button onclick="backToBlog()" class="text-yellow-500 mb-8 flex items-center hover:text-yellow-400 transition-colors">
+                <i class="fas fa-arrow-left mr-2"></i> Back to Blog
+            </button>
+            
+            <div class="flex items-center mb-6">
+                <span class="text-yellow-500 text-sm font-medium">AI</span>
+                <span class="text-gray-500 mx-2">•</span>
+                <span class="text-gray-400 text-sm">May 28, 2023</span>
+            </div>
+            
+            <h1 class="text-3xl md:text-4xl font-bold mb-6">Integrating AI into Your Development Workflow</h1>
+            
+            <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=765&q=80" 
+                 alt="AI" class="w-full h-96 object-cover rounded-lg mb-8">
+            
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 mb-4">Artificial Intelligence is no longer just a buzzword - it's becoming an essential part of modern development workflows. From code completion tools to AI-powered testing frameworks, developers now have access to powerful assistants that can dramatically improve productivity.</p>
+                
+                <h2 class="text-2xl font-bold text-yellow-500 mt-8 mb-4">AI-Powered Code Completion</h2>
+                <p class="text-gray-300 mb-4">Tools like GitHub Copilot have revolutionized how developers write code. These AI pair programmers can:</p>
+                <ul class="list-disc pl-6 mb-4 text-gray-300">
+                    <li class="mb-2">Suggest entire functions based on comments</li>
+                    <li class="mb-2">Generate boilerplate code instantly</li>
+                    <li class="mb-2">Help with documentation</li>
+                </ul>
+                
+                <h2 class="text-2xl font-bold text-yellow-500 mt-8 mb-4">Automated Testing with AI</h2>
+                <p class="text-gray-300 mb-4">AI can analyze your test coverage and suggest additional test cases. Some benefits include:</p>
+                <ul class="list-disc pl-6 mb-4 text-gray-300">
+                    <li class="mb-2">Identifying edge cases humans might miss</li>
+                    <li class="mb-2">Generating realistic test data</li>
+                    <li class="mb-2">Predicting which tests to run based on code changes</li>
+                </ul>
+                
+                <div class="border-t border-gray-700 mt-12 pt-8">
+                    <h3 class="text-xl font-bold mb-4">About the Author</h3>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-yellow-500 flex items-center justify-center text-black font-bold mr-4">
+                            AS
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Alice Smith</h4>
+                            <p class="text-gray-400 text-sm">AI Specialist at 99HZ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Post 3 -->
+        <div id="post3" class="post-page max-w-4xl mx-auto">
+            <button onclick="backToBlog()" class="text-yellow-500 mb-8 flex items-center hover:text-yellow-400 transition-colors">
+                <i class="fas fa-arrow-left mr-2"></i> Back to Blog
+            </button>
+            
+            <div class="flex items-center mb-6">
+                <span class="text-yellow-500 text-sm font-medium">Security</span>
+                <span class="text-gray-500 mx-2">•</span>
+                <span class="text-gray-400 text-sm">April 12, 2023</span>
+            </div>
+            
+            <h1 class="text-3xl md:text-4xl font-bold mb-6">Essential Security Practices for Modern Applications</h1>
+            
+            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" 
+                 alt="Security" class="w-full h-96 object-cover rounded-lg mb-8">
+            
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 mb-4">With cyber threats becoming more sophisticated, application security has never been more critical. This comprehensive guide covers the essential security practices every development team should implement.</p>
+                
+                <h2 class="text-2xl font-bold text-yellow-500 mt-8 mb-4">OWASP Top 10 Vulnerabilities</h2>
+                <p class="text-gray-300 mb-4">The Open Web Application Security Project (OWASP) identifies the most critical web application security risks:</p>
+                <div class="bg-gray-800 rounded-lg p-4 mb-6">
+                    <ol class="list-decimal pl-6 text-gray-300">
+                        <li class="mb-2">Injection</li>
+                        <li class="mb-2">Broken Authentication</li>
+                        <li class="mb-2">Sensitive Data Exposure</li>
+                        <li class="mb-2">XML External Entities (XXE)</li>
+                        <li class="mb-2">Broken Access Control</li>
+                    </ol>
+                </div>
+                
+                <h2 class="text-2xl font-bold text-yellow-500 mt-8 mb-4">Modern Authentication Strategies</h2>
+                <p class="text-gray-300 mb-4">Beyond traditional username/password, consider:</p>
+                <ul class="list-disc pl-6 mb-4 text-gray-300">
+                    <li class="mb-2">Multi-factor authentication (MFA)</li>
+                    <li class="mb-2">OAuth 2.0 and OpenID Connect</li>
+                    <li class="mb-2">Passwordless authentication</li>
+                </ul>
+                
+                <div class="border-t border-gray-700 mt-12 pt-8">
+                    <h3 class="text-xl font-bold mb-4">About the Author</h3>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-yellow-500 flex items-center justify-center text-black font-bold mr-4">
+                            MR
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Michael Roberts</h4>
+                            <p class="text-gray-400 text-sm">Security Lead at 99HZ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <span class="text-yellow-500 font-bold text-2xl">99</span>
+                        <span class="text-white font-bold text-2xl">HZ</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Innovative software solutions for the digital age.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-500 transition-colors">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-500 transition-colors">Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-500 transition-colors">Portfolio</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-500 transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-500 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-500 transition-colors">Web Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-500 transition-colors">Mobile Apps</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-500 transition-colors">UI/UX Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-500 transition-colors">Cloud Solutions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-500 transition-colors">AI Integration</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2 text-yellow-500"></i>
+                            123 Tech Street, Silicon Valley
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-2 text-yellow-500"></i>
+                            +1 (555) 123-4567
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-yellow-500"></i>
+                            info@99hz.com
+                        </li>
+                    </ul>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-yellow-500 transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-yellow-500 transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-yellow-500 transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+                <p>&copy; 2023 99HZ. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function loadPost(postId) {
+            // Hide blog section
+            document.getElementById('blog-section').style.display = 'none';
+            
+            // Show post pages container
+            const postPages = document.getElementById('post-pages');
+            postPages.style.display = 'block';
+            
+            // Hide all post pages
+            const posts = document.querySelectorAll('.post-page');
+            posts.forEach(post => {
+                post.classList.remove('active-post');
+            });
+            
+            // Show the selected post
+            document.getElementById(postId).classList.add('active-post');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        function backToBlog() {
+            // Hide post pages container
+            document.getElementById('post-pages').style.display = 'none';
+            
+            // Show blog section
+            document.getElementById('blog-section').style.display = 'block';
+            
+            // Scroll to blog section
+            document.getElementById('blog-section').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
