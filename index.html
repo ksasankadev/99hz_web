@@ -203,22 +203,22 @@
         <img src="images/Hotel heshani.jpg" class="w-full h-full rounded-full object-cover shadow-lg" alt="Hotel Heshani">
       </div>
       <div class="flex-shrink-0 w-32 h-32">
-        <img src="/images/Star vip.jpg" class="w-full h-full rounded-full object-cover shadow-lg" alt="Star Vip Rest">
+        <img src="images/Star vip.jpg" class="w-full h-full rounded-full object-cover shadow-lg" alt="Star Vip Rest">
       </div>
       <div class="flex-shrink-0 w-32 h-32">
-        <img src="/images/Elite.jpg" class="w-full h-full rounded-full object-cover shadow-lg" alt="Elite Fashion">
+        <img src="images/Elite.jpg" class="w-full h-full rounded-full object-cover shadow-lg" alt="Elite Fashion">
       </div>
       <div class="flex-shrink-0 w-32 h-32">
-        <img src="/images/Dilshan.jpg" class="w-full h-full rounded-full object-cover shadow-lg" alt="Dilshan Gadol">
+        <img src="images/Dilshan.jpg" class="w-full h-full rounded-full object-cover shadow-lg" alt="Dilshan Gadol">
       </div>
       <div class="flex-shrink-0 w-32 h-32">
-        <img src="c:\Users\ASUS\OneDrive\Pictures\Saved Pictures\WhatsApp Image 2025-07-05 at 11.13.45_5f095f98.jpg" class="w-full h-full rounded-full object-cover shadow-lg" alt="t&c Rio">
+        <img src="images/T&C Rio.jpg" class="w-full h-full rounded-full object-cover shadow-lg" alt="t&c Rio">
       </div>
       <div class="flex-shrink-0 w-32 h-32">
-        <img src="c:\Users\ASUS\OneDrive\Pictures\Saved Pictures\WhatsApp Image 2025-07-05 at 11.13.44_f27d551e.jpg" class="w-full h-full rounded-full object-cover shadow-lg" alt="Indunil construction">
+        <img src="images/Indunil.jpg" class="w-full h-full rounded-full object-cover shadow-lg" alt="Indunil construction">
       </div>
       <div class="flex-shrink-0 w-32 h-32">
-        <img src="c:\Users\ASUS\OneDrive\Pictures\Saved Pictures\WhatsApp Image 2025-07-05 at 11.19.37_64ae876f.jpg" class="w-full h-full rounded-full object-cover shadow-lg" alt="Native lanka Taxi">
+        <img src="images/Native Lanka.jpg" class="w-full h-full rounded-full object-cover shadow-lg" alt="Native lanka Taxi">
       </div>
     </div>
 
@@ -259,13 +259,18 @@
 
 </body>
 
+
+
+  </div>
+</body>
 </html>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Square Flags Display (Full View)</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -281,11 +286,20 @@
       gap: 20px;
     }
 
+    .flag-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     .flag {
       width: 100px;
       height: 100px;
-      border-radius: 50%;
-      overflow: hidden;
+      border-radius: 0;
+      background-color: #ffffff; /* optional: background for flags with transparency */
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border: 3px solid #fff;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       transition: transform 0.3s;
@@ -298,7 +312,13 @@
     .flag img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain; /* Show full flag without cropping */
+    }
+
+    .flag-label {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #555;
     }
 
     h2 {
@@ -308,17 +328,29 @@
   </style>
 </head>
 <body>
-  <h2></h2>
+  <h2>World Country Flags (Square, Full View)</h2>
   <div class="flag-container">
-    <div class="flag"><img src="https://flagcdn.com/w320/us.png" alt="USA Flag"></div>
-    <div class="flag"><img src="https://flagcdn.com/w320/jp.png" alt="Japan Flag"></div>
-    <div class="flag"><img src="https://flagcdn.com/w320/lk.png" alt="Sri Lanka Flag"></div>
-    <div class="flag"><img src="https://flagcdn.com/w320/au.png" alt="Australia"></div>
-
-
+    <div class="flag-item">
+      <div class="flag"><img src="https://flagcdn.com/w320/us.png" alt="USA Flag"></div>
+      <div class="flag-label">USA</div>
+    </div>
+    <div class="flag-item">
+      <div class="flag"><img src="https://flagcdn.com/w320/jp.png" alt="Japan Flag"></div>
+      <div class="flag-label">Japan</div>
+    </div>
+    <div class="flag-item">
+      <div class="flag"><img src="https://flagcdn.com/w320/lk.png" alt="Sri Lanka Flag"></div>
+      <div class="flag-label">Sri Lanka</div>
+    </div>
+    <div class="flag-item">
+      <div class="flag"><img src="https://flagcdn.com/w320/au.png" alt="Australia Flag"></div>
+      <div class="flag-label">Australia</div>
+    </div>
+    </div>
   </div>
 </body>
 </html>
+
 
 
 
@@ -774,7 +806,7 @@
       <!-- Repeat and change content/image -->
       <div class="bg-white rounded-lg overflow-hidden shadow-md text-center">
         <div class="overflow-hidden">
-          <img src="file:///C:/Users/ASUS/OneDrive/Pictures/Saved%20Pictures/WhatsApp%20Image%202025-06-29%20at%2010.07.53_c813a458.jpg" alt="Sri Jaya" class="w-full h-64 object-cover transition duration-500">
+          <img src="images/Sri jaya.jpg" alt="Sri Jaya" class="w-full h-64 object-cover transition duration-500">
         </div>
         <div class="p-6">
           <h3 class="text-xl font-bold mb-1 text-gray-800">Sri Jaya</h3>
@@ -786,7 +818,7 @@
       <!-- Member 2 -->
       <div class="bg-white rounded-lg overflow-hidden shadow-md text-center">
         <div class="overflow-hidden">
-          <img src="c:\Users\ASUS\OneDrive\Pictures\Saved Pictures\IMG20230516101015 (5) copy.jpg" alt="Sajani" class="w-full h-64 object-cover transition duration-500">
+          <img src="images/sajani.jpg" alt="Sajani" class="w-full h-64 object-cover transition duration-500">
         </div>
         <div class="p-6">
           <h3 class="text-xl font-bold mb-1 text-gray-800">Sajani Ariyasena</h3>
@@ -810,7 +842,7 @@
       <!-- Member 4 -->
       <div class="bg-white rounded-lg overflow-hidden shadow-md text-center">
         <div class="overflow-hidden">
-          <img src="c:\Users\ASUS\OneDrive\Pictures\Saved Pictures\WhatsApp Image 2025-07-05 at 09.12.48_25b5f7b8.jpg" alt="Kalana" class="w-full h-64 object-cover transition duration-500">
+          <img src="images/Kalana.jpg" alt="Kalana" class="w-full h-64 object-cover transition duration-500">
         </div>
         <div class="p-6">
           <h3 class="text-xl font-bold mb-1 text-gray-800">Kalana Sasanka</h3>
@@ -822,7 +854,7 @@
       <!-- Member 5 -->
       <div class="bg-white rounded-lg overflow-hidden shadow-md text-center">
         <div class="overflow-hidden">
-          <img src="c:\Users\ASUS\OneDrive\Pictures\Saved Pictures\FB_IMG_1746293996308.jpg" alt="Nirodha" class="w-full h-64 object-cover transition duration-500">
+          <img src="images/nirodha.jpg" alt="Nirodha" class="w-full h-64 object-cover transition duration-500">
         </div>
         <div class="p-6">
           <h3 class="text-xl font-bold mb-1 text-gray-800">Nirodha Rathnamalitha</h3>
@@ -834,7 +866,7 @@
       <!-- Member 6 -->
       <div class="bg-white rounded-lg overflow-hidden shadow-md text-center">
         <div class="overflow-hidden">
-          <img src="c:\Users\ASUS\OneDrive\Pictures\Saved Pictures\WhatsApp Image 2025-07-04 at 17.54.28_4276cb7f.jpg" alt="Omalika" class="w-full h-64 object-cover transition duration-500">
+          <img src="images/Omalika.jpg" alt="Omalika" class="w-full h-64 object-cover transition duration-500">
         </div>
         <div class="p-6">
           <h3 class="text-xl font-bold mb-1 text-gray-800">Omalika Dewmini</h3>
@@ -846,7 +878,7 @@
       <!-- Member 7 -->
       <div class="bg-white rounded-lg overflow-hidden shadow-md text-center">
         <div class="overflow-hidden">
-          <img src="c:\Users\ASUS\OneDrive\Pictures\Saved Pictures\WhatsApp Image 2025-07-04 at 16.46.33_96e6661e.jpg" alt="Miyumi" class="w-full h-64 object-cover transition duration-500">
+          <img src="images/Mayumi.jpg" alt="Miyumi" class="w-full h-64 object-cover transition duration-500">
         </div>
         <div class="p-6">
           <h3 class="text-xl font-bold mb-1 text-gray-800">Miyumi Thisanga</h3>
@@ -858,7 +890,7 @@
       <!-- Member 8 -->
       <div class="bg-white rounded-lg overflow-hidden shadow-md text-center">
         <div class="overflow-hidden">
-          <img src="c:\Users\ASUS\OneDrive\Pictures\Saved Pictures\WhatsApp Image 2025-07-04 at 00.23.41_91e77a61.jpg" alt="Akila" class="w-full h-64 object-cover transition duration-500">
+          <img src="images/Akila.jpg" alt="Akila" class="w-full h-64 object-cover transition duration-500">
         </div>
         <div class="p-6">
           <h3 class="text-xl font-bold mb-1 text-gray-800">Akila Tharuka</h3>
