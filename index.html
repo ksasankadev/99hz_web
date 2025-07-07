@@ -39,9 +39,69 @@
         .nav-link:hover::after {
             width: 100%;
         }
+
+        #preloader {
+  transition: opacity 0.5s ease;
+}
     </style>
 </head>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
 <body class="font-sans bg-gray-50">
+
+
+<!-- Preloader -->
+<div id="preloader" class="fixed inset-0 bg-black flex flex-col items-center justify-center z-50 transition-opacity duration-500">
+  <img src="images/99hz.jpg" alt="Loading..." class="h-48 w-auto animate-pulse mb-4" />
+  <p class="text-yellow-400 text-3xl" style="font-family: 'Orbitron', sans-serif;">
+  Loading<span class="dots"></span>
+</p>
+
+<style>
+  .dots {
+    display: inline-block;
+    width: 1.2em;
+    text-align: left;
+  }
+  .dots::after {
+    content: '';
+    display: inline-block;
+    animation: dots 1.5s steps(3, end) infinite;
+  }
+  @keyframes dots {
+    0%, 20% {
+      content: '.';
+    }
+    40% {
+      content: '..';
+    }
+    60% {
+      content: '...';
+    }
+    80%, 100% {
+      content: '....';
+    }
+  }
+</style>
+
+</div>
+
+<!-- Script -->
+<script>
+  window.addEventListener('load', function () {
+    const preloader = document.getElementById('preloader');
+
+    setTimeout(function () {
+      if (preloader) {
+        preloader.style.opacity = '0';
+        setTimeout(() => {
+          preloader.style.display = 'none';
+        }, 500); // allow fade-out to complete
+      }
+    }, 2000); // 5 seconds
+  });
+</script>
+
     <!-- Navigation -->
     <nav class="bg-black text-white sticky top-0 z-50 shadow-lg">
         <div class="container mx-auto px-6 py-3">
@@ -77,7 +137,7 @@
                 </div>
             </div>
             
-            <!-- Mobile Menu -->
+            <!-- Mobile Menu - -->
             <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4">
                 <a href="#home" class="block py-2 text-white hover:text-yellow-400">Home</a>
                 <a href="#about" class="block py-2 text-white hover:text-yellow-400">About</a>
@@ -93,8 +153,8 @@
     <section id="home" class="hero-bg text-white py-20 md:py-32">
         <div class="container mx-auto px-6 text-center">
              <img src="images/99hz.jpg" alt="99HZ Logo" class="h-60 object-contain mx-auto mb-6" />
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">Innovative <span class="text-yellow-500">IT Solutions</span> for Your Business</h1>
-            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">We help businesses leverage technology to achieve their goals and stay ahead of the competition.</p>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6" style="font-family: 'Orbitron', sans-serif;">Innovative <span class="text-yellow-500">IT Solutions</span> for Your Business</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" style="font-family: 'Orbitron', sans-serif;">We help businesses leverage technology to achieve their goals and stay ahead of the competition.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#contact" class="bg-yellow-500 hover:bg-yellow-500 text-black font-bold py-3 px-8 rounded-lg transition duration-300">Get Started</a>
                 <a href="#services" class="bg-transparent hover:bg-gray-800 border-2 border-white text-white font-bold py-3 px-8 rounded-lg transition duration-300">Our Services</a>
